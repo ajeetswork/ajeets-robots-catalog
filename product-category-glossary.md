@@ -274,3 +274,109 @@ Shared terminology for the Ajeets Robots Printify catalog. Use these terms consi
 - Ajeets Robots - Classic Water Bottle
 
 **When to use:** Use "water bottle" for portable, sealed drinking containers. Do not confuse with "tumbler" (often open-top or with a sipping lid, less portable) or "mug" (ceramic, for home use). Specify capacity (20 oz) when discussing fit/portability.
+
+---
+
+## Terms That Shouldn't Be Used Interchangeably
+
+The following category pairs are frequently confused. Use the correct term for the correct product — mixing them up causes customer confusion, wrong listings, and returns.
+
+### mug vs. tumbler vs. water bottle
+
+- **Mug** — Ceramic, handled, 12 oz, for hot drinks at home/desk. No lid. No insulation claim. Product: *AJEETS ROBOTS - Classic Mug*
+- **Tumbler** — Stainless steel, double-wall vacuum insulated, 20 oz, keeps drinks hot/cold for hours. May include a lid. For on-the-go or desk use. Product: *Ajeets Robots - Classic Tumbler*
+- **Water bottle** — Portable, sealable, 20 oz, for everyday hydration. Designed to go in bags and cup holders. Product: *Ajeets Robots - Classic Water Bottle*
+
+**Rule of thumb:** Mug = ceramic + home. Tumbler = insulated + tall. Water bottle = sealed + portable.
+
+---
+
+### sweatshirt vs. hoodie
+
+- **Sweatshirt** — Crewneck pullover fleece top. No hood, no zipper. Products: *Ajeets Robots - Women's Sweatshirt Full Size / Cropped / #1*
+- **Hoodie / Hooded sweatshirt** — Same fleece material but includes an attached hood, usually with a kangaroo pocket. Products: *Ajeets Robots - Hooded Sweatshirt*, *Ajeets Robots - Techy Casual Streetwear*
+
+**Rule of thumb:** If it has a hood, call it a hoodie. If no hood, call it a sweatshirt.
+
+---
+
+### sweatshirt vs. sweatshirt blanket
+
+- **Sweatshirt** — A wearable fleece pullover top. Apparel. See Sweatshirt entry above.
+- **Sweatshirt blanket** — A throw blanket made from sweatshirt-weight polyester fabric. Home textile, NOT clothing. Product: *Ajeets Robot - Sweatshirt Blanket*
+
+**Rule of thumb:** Never drop "blanket" from "Sweatshirt Blanket." A customer expecting a wearable sweatshirt will be very confused receiving a throw blanket.
+
+---
+
+### tee vs. polo
+
+- **Tee / T-shirt** — Crew-neck, short-sleeve, no collar, no buttons. Casual jersey knit. Products: *Ajeets Robots - Kids Cotton Tee*, *Ajeet Robot mens tee*, *Ajeets Robots - Women's Tee*
+- **Polo** — Collared knit shirt with a 2–3 button placket. More formal than a tee. Product: *Ajeets Robot's - Polo Tee*
+
+**Rule of thumb:** Collar + buttons = polo. No collar = tee. Never call a polo a "tee" in customer-facing copy.
+
+---
+
+### pillowcase vs. pillow
+
+- **Pillowcase** — A removable fabric cover for a pillow. That's what we sell. Product: *Ajeets Robots - Square Pillowcase*
+- **Pillow** — The filled cushion insert that goes inside the pillowcase. We do NOT sell this.
+
+**Rule of thumb:** Always say "pillowcase" — never "pillow." Make it clear in listings that the insert/fill is NOT included and is sold separately.
+
+---
+
+### backpack vs. tote
+
+- **Backpack** — Two-strap bag worn on the back, zippered compartments, padded laptop sleeve. Product: *Ajeets Robots || Classic Backpack*
+- **Tote** — Open-top shoulder bag with two parallel handles, unstructured, no zipper closure. Product: *Ajeets Robots - Woven Straw Tote*
+
+**Rule of thumb:** Back = backpack. Shoulder = tote. Backpacks zip closed; totes are open-top.
+
+---
+
+### sneakers vs. clog footwear
+
+- **Sneakers** — Lace-up athletic casual shoes with rubber soles. Product: *Ajeets Robots - Women's Sneakers*
+- **Clog footwear** — Slip-on, closed-toe, no laces, thick sole, easy on/off. Product: *Ajeets Robots - Rounded Clog Style Footwear*
+
+**Rule of thumb:** Laces = sneakers. Slip-on, no laces = clogs. Completely different fit, use case, and customer expectation.
+
+---
+
+### journal vs. notebook
+
+- **Journal** — Smaller personal writing book, 5" × 7.2", portable, for notes/thoughts/sketches. Product: *journal*
+- **Notebook** — Larger, spiral-bound, dotted pages, designed for planning/sketching/creative thinking. Product: *Ajeets Robots - Classic Notebook*
+
+**Rule of thumb:** Small + personal = journal. Spiral-bound + dotted pages = notebook. Don't use interchangeably in listings.
+
+---
+
+### wall art vs. wall calendar
+
+- **Wall art** — Decorative canvas print meant to hang permanently as decor. Product: *Ajeets Robots - Canvas Wall Art Print*
+- **Wall calendar** — 12-month date-tracking calendar that hangs on a wall, one month per page. Product: *Ajeets Robots - 2026 Wall Calendar*
+
+**Rule of thumb:** Art = decoration, stays up year-round. Calendar = functional date tracker, pages change monthly, year-specific. A customer looking for decor does not want a calendar and vice versa.
+
+---
+
+### phone case (always specify model)
+
+- **Phone case** is NOT a universal product. Our case fits 70+ specific models across iPhone (8 → 17), Samsung Galaxy (S10 → S26), and Google Pixel (2 → 9) — but NOT every phone. Product: *Ajeets Robots - Phone Case*
+
+**Rule of thumb:** Never say just "phone case" in customer-facing copy without directing buyers to check model compatibility. Always include: "Check that your exact phone model is supported before ordering." Available in Glossy or Matte — specify which when relevant.
+
+---
+
+### hat / dad hat vs. other headwear
+
+- **Dad hat / cap** — Soft unstructured 6-panel cap with curved brim and adjustable strap. That's what we sell. Product: *Ajeets Robots - Leather Patch Hat*
+- **NOT a beanie** (knit, no brim)
+- **NOT a snapback** (structured flat brim)
+- **NOT a trucker hat** (mesh back panels)
+- **NOT a fitted cap** (no adjustable strap, sized)
+
+**Rule of thumb:** Say "dad hat" or "unstructured cap" — never just "hat" alone in a listing, and never use beanie/snapback/trucker/fitted terms for this product. Those are different products with different customer expectations.
