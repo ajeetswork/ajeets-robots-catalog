@@ -1,45 +1,40 @@
 # Catalog Release Note
 
-## Release Info
-- **Date:** YYYY-MM-DD
-- **Author:**
-- **Release tag / version:**
+## Release Date
+YYYY-MM-DD
 
-## Product
+## Affected Printify Products
 
-- **Printify Product ID:**
-- **Product Title:**
-- **Product Link:**
-- **Blueprint ID:**
-- **Print Provider ID:**
+| Product Title | Printify Product ID | Product Link |
+|---|---|---|
+| | | |
+| | | |
 
-## What Changed
+## Changes
 
-| Field | Before | After |
-|-------|--------|-------|
-| Title | | |
-| Description | | |
-| Price | | |
-| Variants | | |
-| Images / Mockups | | |
-| Tags | | |
-| Visibility | | |
-| Shipping | | |
-| Other | | |
+| Product | Change Type | Old Value | New Value | Reason |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
+| | | | | |
 
-## Summary
+## Publication Status
 
-_One-paragraph summary of the change and why it was made._
+| Product | Status | Published At | Notes |
+|---|---|---|---|
+| | Draft / Published / Unpublished | | |
 
-## Checklist
+## Reviewer
 
-- [ ] Description updated in Printify
-- [ ] Price updated in Printify
-- [ ] Mockup images regenerated / verified
-- [ ] Product published / republished
-- [ ] Storefront link tested
-- [ ] Team notified
+- **Name:**
+- **Reviewed At:**
+- **Approved:** Yes / No
+- **Comments:**
 
-## Notes
+---
 
-_Any additional context, links to design files, or follow-up tasks._
+### Change Type Options
+`title` | `description` | `price` | `variant` | `image` | `mockup` | `tags` | `shipping` | `visibility` | `blueprint` | `print_provider` | `other`
+
+### Publication Status Options
+`Draft` | `Published` | `Unpublished` | `Pending`
