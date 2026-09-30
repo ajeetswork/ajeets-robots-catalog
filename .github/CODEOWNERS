@@ -1,0 +1,19 @@
+# Ajeet's Robots Repository Review Ownership
+# Source: https://docs.google.com/document/d/183hSDkjeLrEJVESG5BGZ0WJNeKSg6WUGh7cgZxZDplI/edit (Status: Approved)
+# Repository: ajeetswork/ajeets-robots-catalog
+# Generated: 2026-09-30
+# Ordering: broad-to-specific per spec (fallback first, then specific paths)
+# Excluded: /docs/brand/ - Brand review team handle not yet confirmed (path exists as docs/brand/voice.md but omitted intentionally)
+# Mapping Sheet: https://docs.google.com/spreadsheets/d/1TFlW0DSitIXaSpO8MCQhTsHMxkDcVl6h2rqfIj6aNAM/edit
+
+# Repository fallback - use when no more specific rule applies
+* @ajeetswork
+
+# Catalog product data - covers structured product grouping files | Representative: catalog/products/core.json
+/catalog/products/ @ajeetswork
+
+# Release documentation - covers release-process documentation | Representative: docs/release/process.md
+/docs/release/ @ajeetswork
+
+# Catalog validation scripts - covers catalog validation and release helper scripts | Representative: scripts/catalog-validate.js
+/scripts/ @ajeetswork
