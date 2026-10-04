@@ -1,0 +1,25 @@
+{
+  "name": "ajeets-robots-catalog-tools",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Internal catalog maintenance utilities for Ajeet's Robots.",
+  "type": "commonjs",
+  "scripts": {
+    "catalog:validate": "node scripts/catalog-validate.js",
+    "catalog:feed": "node scripts/generate-feed.js",
+    "format": "prettier --write \"src/**/*.js\" \"scripts/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.js\" \"scripts/**/*.js\""
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dayjs": "^1.11.13",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
+    "nanoid": "^3.3.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "prettier": "^3.3.3"
+  }
+}
