@@ -3,3 +3,11 @@ node_modules/
 .env.local
 .DS_Store
 npm-debug.log*
+
+# Local preview/session state — scripts/catalog-preview.mjs + docs/catalog-development.md
+.catalog-cache/
+
+# Generated catalog outputs — scripts/build-catalog.mjs derives from catalog.json (reproducible, no deliverable exception)
+dist/catalog-index.json
+reports/catalog-validation.json
+dist/catalog-feed.json
