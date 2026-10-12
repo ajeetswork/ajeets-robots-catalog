@@ -1,0 +1,122 @@
+name: CI Build and Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  firmware-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build firmware package
+        run: |
+          mkdir -p out/release out/work
+          printf 'robot firmware bundle\n' > out/release/robot-firmware.tar.gz
+          printf 'sha256: placeholder-build-checksum\n' > out/release/checksums.txt
+          printf 'temporary linker map\n' > out/work/linker.map
+      - name: Upload firmware release
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-release
+          path: out/release/**
+          retention-days: 14
+
+  firmware-smoke:
+    needs: firmware-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download firmware release
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware-release
+          path: incoming/firmware
+      - name: Validate release payload
+        run: |
+          test -f incoming/firmware/robot-firmware.tar.gz
+          test -f incoming/firmware/checksums.txt
+
+  integration-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run integration suite
+        run: |
+          mkdir -p test-output/reports test-output/logs test-output/screenshots
+          printf '<testsuite tests="42" failures="0"/>\n' > test-output/reports/junit.xml
+          printf 'integration runtime and retry details\n' > test-output/logs/integration.log
+          printf 'browser capture placeholder\n' > test-output/screenshots/checkout-flow.txt
+      - name: Upload integration diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-diagnostics
+          path: test-output/**
+          retention-days: 7
+
+  preview-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build web preview
+        run: |
+          mkdir -p dist/site/assets dist/tmp
+          printf '<html><body>Robot status preview</body></html>\n' > dist/site/index.html
+          printf 'console.log("preview");\n' > dist/site/assets/app.js
+          printf 'bundler timing trace\n' > dist/tmp/bundler-trace.txt
+          printf 'incremental build scratch data\n' > dist/tmp/incremental-state.bin
+      - name: Upload web preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-preview
+          path: dist/**
+          retention-days: 5
+
+  preview-publish:
+    needs: preview-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download web preview
+        uses: actions/download-artifact@v4
+        with:
+          name: web-preview
+          path: incoming/preview
+      - name: Prepare preview publish
+        run: |
+          test -f incoming/preview/site/index.html
+          test -f incoming/preview/site/assets/app.js
+          printf 'preview publish consumes only incoming/preview/site\n'
+
+  worker-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package worker service
+        env:
+          PACKAGE_REGISTRY_TOKEN: ${{ secrets.PACKAGE_REGISTRY_TOKEN }}
+        run: |
+          mkdir -p package/release package/runtime
+          printf 'worker service bundle\n' > package/release/worker.tgz
+          printf '{"name":"robot-worker","format":1}\n' > package/release/manifest.json
+          printf 'PACKAGE_REGISTRY_TOKEN=%s\n' "$PACKAGE_REGISTRY_TOKEN" > package/runtime/upload.env
+          printf 'temporary registry upload context\n' > package/runtime/session.log
+      - name: Upload worker package
+        uses: actions/upload-artifact@v4
+        with:
+          name: worker-package
+          path: package/**
+          retention-days: 14
+
+  worker-publish:
+    needs: worker-package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download worker package
+        uses: actions/download-artifact@v4
+        with:
+          name: worker-package
+          path: incoming/worker
+      - name: Validate package before publish
+        run: |
+          test -f incoming/worker/release/worker.tgz
+          test -f incoming/worker/release/manifest.json
