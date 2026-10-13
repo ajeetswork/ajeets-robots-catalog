@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: catalog-publish-${{ github.ref_name }}
+  group: catalog-publish-stable
   cancel-in-progress: false
 
 jobs:
