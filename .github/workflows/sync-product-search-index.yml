@@ -1,0 +1,47 @@
+name: Sync Product Search Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "catalog/**"
+      - "search/**"
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Search index target
+        required: true
+        type: choice
+        default: staging
+        options:
+          - staging
+          - production
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate index payload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/validate-search-documents.js
+
+  update-index:
+    name: Replace shared search index
+    needs: validate
+    runs-on: ubuntu-latest
+    concurrency:
+      group: search-index-${{ github.event_name == 'workflow_dispatch' && inputs.environment || 'production' }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select target
+        id: target
+        run: echo "target=${{ github.event_name == 'workflow_dispatch' && inputs.environment || 'production' }}" >> "$GITHUB_OUTPUT"
+      - name: Replace target index
+        env:
+          SEARCH_ADMIN_TOKEN: ${{ secrets.SEARCH_ADMIN_TOKEN }}
+        run: node scripts/replace-search-index.js --environment "${{ steps.target.outputs.target }}"
