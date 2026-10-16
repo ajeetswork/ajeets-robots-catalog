@@ -9,7 +9,9 @@
 export function getProduct(productId, options = {}) {
   const includeInventory = options.includeInventory === true;
   const product = findProductById(productId);
-  if (!product) return null;
+  if (!product) {
+    throw new Error(`Unknown product: ${productId}`);
+  }
 
   const result = {
     id: product.id,
