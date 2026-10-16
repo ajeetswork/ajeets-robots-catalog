@@ -69,7 +69,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: web-preview
-          path: dist/**
+          path: |
+            dist/**
+            !dist/tmp/**
           retention-days: 5
 
   preview-publish:
@@ -104,7 +106,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: worker-package
-          path: package/**
+          path: |
+            package/**
+            !package/runtime/**
           retention-days: 14
 
   worker-publish:
