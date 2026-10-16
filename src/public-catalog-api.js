@@ -49,7 +49,8 @@ export function normalizeCatalogTitle(title) {
     throw new TypeError("title must be a string");
   }
 
-  return title.trim().replace(/\s+/g, " ");
+  const pieces = title.trim().split(/\s+/);
+  return pieces.join(" ");
 }
 
 function findProductById(productId) {
