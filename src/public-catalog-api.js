@@ -28,15 +28,18 @@ export function getProduct(productId, options = {}) {
  * Format an integer cent amount for display.
  * Contract: currency is optional and defaults to USD.
  */
-export function formatPrice(cents, currency = "USD") {
-  if (!Number.isInteger(cents)) {
-    throw new TypeError("cents must be an integer");
+export function formatPrice({ amountCents, currency }) {
+  if (!Number.isInteger(amountCents)) {
+    throw new TypeError("amountCents must be an integer");
+  }
+  if (typeof currency !== "string") {
+    throw new TypeError("currency must be supplied");
   }
 
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
-  }).format(cents / 100);
+  }).format(amountCents / 100);
 }
 
 /**
