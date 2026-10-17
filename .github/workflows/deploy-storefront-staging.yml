@@ -16,7 +16,7 @@ jobs:
   deploy:
     name: Deploy staging storefront
     runs-on: ubuntu-latest
-    environment: development
+    environment: staging
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
