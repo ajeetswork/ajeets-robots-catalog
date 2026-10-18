@@ -1,0 +1,23 @@
+{
+  "products": {
+    "source": "schemas/product.schema.json",
+    "output": "src/generated/product-types.ts",
+    "generator": "json-schema-to-typescript"
+  },
+  "apiClient": {
+    "source": "api/openapi.yaml",
+    "output": "src/generated/catalog-client.ts",
+    "generator": "openapi-typescript-codegen"
+  },
+  "robotStatuses": {
+    "source": "config/robot-statuses.yaml",
+    "output": "src/generated/robot-statuses.ts",
+    "generator": "scripts/generate-statuses.mjs"
+  },
+  "routeDocs": {
+    "source": "config/routes.yaml",
+    "output": "docs/generated/routes.md",
+    "generator": "scripts/generate-route-docs.mjs",
+    "options": { "includeVisibility": ["public"] }
+  }
+}
