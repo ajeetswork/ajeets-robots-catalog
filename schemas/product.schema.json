@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CatalogProduct",
+  "type": "object",
+  "required": ["id", "name", "priceCents", "availability"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "priceCents": { "type": "integer", "minimum": 0 },
+    "availability": { "type": "string", "enum": ["in_stock", "backorder", "discontinued"] }
+  }
+}
