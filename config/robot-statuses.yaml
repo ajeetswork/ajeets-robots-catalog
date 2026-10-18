@@ -1,0 +1,7 @@
+statuses:
+  - id: draft
+    label: Draft
+  - id: active
+    label: Active
+  - id: maintenance
+    label: Maintenance
