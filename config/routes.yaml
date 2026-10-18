@@ -1,0 +1,10 @@
+routes:
+  - path: /catalog
+    name: Catalog
+    visibility: public
+  - path: /robots/:id
+    name: Robot Detail
+    visibility: public
+  - path: /ops/reindex
+    name: Reindex Console
+    visibility: internal
