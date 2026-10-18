@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Ajeet's Robots Catalog API
+  version: 2.4.0
+paths:
+  /products/{id}:
+    get:
+      operationId: getProduct
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: Product found }
+  /products/search:
+    get:
+      operationId: searchProducts
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: Search results }
