@@ -1,0 +1,53 @@
+{
+  "supportedEnvironments": ["development", "staging", "production"],
+  "flags": {
+    "checkout_express_v2": {
+      "kind": "rollout",
+      "owner": "Checkout",
+      "purpose": "Move cart-to-checkout traffic onto Express Checkout v2 after payment and order telemetry stabilized.",
+      "default": true,
+      "environments": {"development": true, "staging": true, "production": true},
+      "lastRolloutChange": "2026-09-12",
+      "decision": "ship"
+    },
+    "catalog_compare_layout": {
+      "kind": "rollout",
+      "owner": "Catalog",
+      "purpose": "Evaluate a compact side-by-side product comparison layout.",
+      "default": false,
+      "environments": {"development": false, "staging": false, "production": false},
+      "lastRolloutChange": "2026-09-02",
+      "decision": "retain_standard_layout"
+    },
+    "search_failover_mode": {
+      "kind": "operational",
+      "owner": "Search",
+      "purpose": "Allow on-call engineers to route catalog search to the backup index during primary-index degradation.",
+      "default": false,
+      "environments": {"development": false, "staging": false, "production": false},
+      "operationalControl": true
+    },
+    "regional_currency_display": {
+      "kind": "configuration",
+      "owner": "Commerce Platform",
+      "purpose": "Keep region-specific currency presentation selectable without separate builds.",
+      "default": false,
+      "environments": {"development": false, "staging": false, "production": false},
+      "regionOverrides": {"US": false, "CA": true, "EU": true},
+      "longLivedConfiguration": true
+    },
+    "recommendation_ranker_v3": {
+      "kind": "experiment",
+      "owner": "Recommendations",
+      "purpose": "Compare Ranker v3 against the current recommendation ordering before a launch decision.",
+      "default": false,
+      "environments": {
+        "development": {"percentage": 100},
+        "staging": {"percentage": 100},
+        "production": {"percentage": 50}
+      },
+      "experimentId": "rec-ranker-v3-2026q4",
+      "plannedReviewDate": "2026-11-05"
+    }
+  }
+}
