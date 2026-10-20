@@ -1,0 +1,23 @@
+name: Catalog behavior tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/fulfillment/**"
+      - "tests/catalog-behavior/**"
+      - ".github/workflows/catalog-behavior-tests.yml"
+  pull_request:
+    paths:
+      - "src/fulfillment/**"
+      - "tests/catalog-behavior/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node --test tests/catalog-behavior/*.test.js
