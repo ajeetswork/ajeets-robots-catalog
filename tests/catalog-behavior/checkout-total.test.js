@@ -5,6 +5,5 @@ const { calculateEducationDiscount, calculateCheckoutTotal } = require("../../sr
 test("education checkout produces a payable total", () => {
   const discount = calculateEducationDiscount(50000, "school");
   const total = calculateCheckoutTotal(50000, discount);
-  assert.ok(total > 0);
-  assert.equal(typeof total, "number");
+  assert.equal(total, 46500);
 });
