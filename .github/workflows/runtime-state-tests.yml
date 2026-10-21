@@ -1,0 +1,28 @@
+name: Runtime state tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/runtime/**"
+      - "tests/runtime-state/**"
+      - "tests/support/runtime-fixtures.js"
+      - "fixtures/runtime/**"
+      - ".github/workflows/runtime-state-tests.yml"
+  pull_request:
+    paths:
+      - "src/runtime/**"
+      - "tests/runtime-state/**"
+      - "tests/support/runtime-fixtures.js"
+      - "fixtures/runtime/**"
+      - ".github/workflows/runtime-state-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node --test --test-concurrency=1 tests/runtime-state/catalog-session.test.js
