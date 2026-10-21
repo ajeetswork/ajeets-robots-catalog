@@ -4,6 +4,9 @@
   "private": true,
   "description": "Internal catalog maintenance utilities for Ajeet's Robots.",
   "type": "commonjs",
+  "imports": {
+    "#shared/*": "./src/shared/*"
+  },
   "scripts": {
     "catalog:validate": "node scripts/catalog-validate.js",
     "catalog:feed": "node scripts/generate-feed.js",
