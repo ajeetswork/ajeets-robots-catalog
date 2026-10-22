@@ -8,7 +8,15 @@ uuid 9.0.1 — Copyright (c) 2010-2020 Robert Kieffer and other contributors. Li
 
 ## chalk 4.1.2
 
-chalk 4.1.2 — Licensed under MIT.
+chalk 4.1.2 — Copyright (c) Sindre Sorhus and contributors. Licensed under MIT.
+
+## dayjs 1.11.13
+
+dayjs 1.11.13 — Copyright (c) iamkun and contributors. Licensed under MIT.
+
+## nanoid 3.3.7
+
+nanoid 3.3.7 — Copyright (c) Andrey Sitnik and contributors. Licensed under MIT.
 
 ## Existing release note
 
