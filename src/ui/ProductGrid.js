@@ -1,4 +1,4 @@
-const { buildRobotProfile } = require('../models/robotprofile.js');
+const { buildRobotProfile } = require('../models/RobotProfile.js');
 
 function renderProductGrid(records) {
   return records.map(buildRobotProfile);
