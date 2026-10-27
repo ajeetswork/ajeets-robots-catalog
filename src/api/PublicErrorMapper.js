@@ -1,6 +1,8 @@
 import {
   AuthenticationRequired,
+  DependencyUnavailable,
   InvalidState,
+  OperationConflict,
   OperationDenied,
   RateLimited,
   ResourceNotFound,
@@ -30,7 +32,7 @@ export function toPublicError(error) {
   if (error instanceof OperationDenied) {
     return [403, {
       error: "operation_denied",
-      message: error.message,
+      message: "You do not have permission to perform this operation",
     }];
   }
 
@@ -42,10 +44,24 @@ export function toPublicError(error) {
     }];
   }
 
+  if (error instanceof OperationConflict) {
+    return [409, {
+      error: "conflict",
+      message: "The resource changed before this request could be applied",
+    }];
+  }
+
   if (error instanceof InvalidState) {
     return [409, {
       error: "invalid_state",
       message: "Operation is not valid in the current state",
+    }];
+  }
+
+  if (error instanceof DependencyUnavailable) {
+    return [503, {
+      error: "dependency_unavailable",
+      message: "A required service is temporarily unavailable",
     }];
   }
 
