@@ -17,9 +17,9 @@ function assertPublicShape(status, body, expectedStatus, expectedError, allowedF
 let PublicErrorMapper, PublicErrors, CatalogPublicRoutes;
 async function load() {
   if (PublicErrorMapper) return;
-  PublicErrorMapper = await import("../../src/api/PublicErrorMapper.js");
-  PublicErrors = await import("../../src/api/PublicErrors.js");
-  CatalogPublicRoutes = await import("../../src/api/CatalogPublicRoutes.js");
+  PublicErrorMapper = await import("../src/api/PublicErrorMapper.js");
+  PublicErrors = await import("../src/api/PublicErrors.js");
+  CatalogPublicRoutes = await import("../src/api/CatalogPublicRoutes.js");
 }
 
 // --- High-confidence mismatch #1: Operation denied must not expose internal diagnostics (contract §4) ---
