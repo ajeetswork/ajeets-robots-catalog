@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: storefront-production
+  cancel-in-progress: false
+
 jobs:
   deploy:
     name: Deploy production storefront
