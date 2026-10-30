@@ -1,4 +1,4 @@
-const { searchCatalog } = require('../services/searchservice.js');
+const { searchCatalog } = require('../services/SearchService.js');
 
 function handleSearch(items, query) {
   return searchCatalog(items, query);

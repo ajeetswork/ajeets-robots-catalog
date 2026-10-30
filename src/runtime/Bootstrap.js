@@ -1,4 +1,4 @@
-const defaults = require('../config/runtimeDefaults.js');
+const defaults = require('../config/RuntimeDefaults.js');
 
 function bootstrapConfig(overrides = {}) {
   return { ...defaults, ...overrides };
