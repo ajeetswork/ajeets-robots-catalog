@@ -11,7 +11,9 @@ const {
   activeLocale,
 } = require("../../src/runtime/catalog-session");
 const {
+  withEnv,
   withGlobalProperty,
+  withTempDir,
 } = require("../support/runtime-fixtures");
 
 const sharedCacheDir = path.join(
@@ -26,19 +28,21 @@ const skuFixture = path.join(
   "catalog-skus.json"
 );
 
-test("uses the EU catalog region when configured", () => {
-  process.env.CATALOG_REGION = "eu";
-  assert.equal(currentRegion(), "eu");
+test("uses the EU catalog region when configured", async () => {
+  await withEnv("CATALOG_REGION", "eu", async () => {
+    assert.equal(currentRegion(), "eu");
+  });
 });
 
 test("uses the US catalog region when no override is configured", () => {
   assert.equal(currentRegion(), "us");
 });
 
-test("remembers the most recent filter for the next catalog view", () => {
-  fs.rmSync(sharedCacheDir, { recursive: true, force: true });
-  saveLastFilter(sharedCacheDir, "warehouse");
-  assert.equal(readLastFilter(sharedCacheDir), "warehouse");
+test("remembers the most recent filter for the next catalog view", async () => {
+  await withTempDir("catalog-", async (cacheDir) => {
+    saveLastFilter(cacheDir, "warehouse");
+    assert.equal(readLastFilter(cacheDir), "warehouse");
+  });
 });
 
 test("a new catalog view starts without a remembered filter", () => {
