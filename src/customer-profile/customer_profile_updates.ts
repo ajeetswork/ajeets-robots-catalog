@@ -2,7 +2,6 @@ import {
   DbClient,
   getCustomerProfile,
   incrementLoyaltyPoints,
-  saveCustomerProfile,
   saveCustomerProfileIfVersion,
 } from "./customer_profile_repository";
 
@@ -22,7 +21,13 @@ export async function updateContactEmail(
   if (!current) throw new CustomerProfileNotFoundError(customerId);
 
   const next = { ...current, email: normalizeEmail(email) };
-  return saveCustomerProfile(db, next);
+  const saved = await saveCustomerProfileIfVersion(db, next, current.version);
+  if (!saved) {
+    throw new CustomerProfileConflictError(
+      `Customer profile changed while contact email was being updated: ${customerId}`
+    );
+  }
+  return saved;
 }
 
 export async function updateDeliveryInstructions(
@@ -37,7 +42,13 @@ export async function updateDeliveryInstructions(
     ...current,
     deliveryInstructions: deliveryInstructions?.trim() || null,
   };
-  return saveCustomerProfile(db, next);
+  const saved = await saveCustomerProfileIfVersion(db, next, current.version);
+  if (!saved) {
+    throw new CustomerProfileConflictError(
+      `Customer profile changed while delivery instructions were being updated: ${customerId}`
+    );
+  }
+  return saved;
 }
 
 export async function updateMarketingPreferences(
